@@ -9,8 +9,8 @@ const Razorpay = require('razorpay')
 const path = require('path');
 const fileURLToPath = require('url');
 const { url } = require('inspector');
-const __filename = url.fileURLToPath(url.fileURLToPath);
-const __dirname = path.dirname(__filename)
+const ___filename = url.fileURLToPath(url.fileURLToPath);
+const __dirname = path.dirname(___filename)
 
 dotenv.config('./.env')
 db()
