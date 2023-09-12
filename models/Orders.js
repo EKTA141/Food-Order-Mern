@@ -1,26 +1,21 @@
 
-const mongoose = require('mongoose')
-const { Schema } = mongoose;
+import mongoose from 'mongoose'
 
-const OrderSchema = new Schema({
+
+const OrderSchema = new mongoose.Schema({
     
     email:{
         type:String,
         required: true,
         unique :true
-    },
-   
+    },  
     order_data :{
         type :Array,
         required : true
     }
-    
-  
   }
 );
-module.exports =  mongoose.model('order',OrderSchema )
+
+export default mongoose.model("order", OrderSchema);
 
 
-// nQaErcKFLfc6PquCPjqCFvQl
-
-// id rzp_live_ix9htSBaPG4pd2

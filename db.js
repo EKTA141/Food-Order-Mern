@@ -1,15 +1,15 @@
 /** @format */
-const dotenv = require('dotenv')
+import dotenv from 'dotenv'
 
-const mongoose = require('mongoose')
-const {MongoClient} = require('mongodb');
+import mongoose from 'mongoose'
+import {MongoClient}  from 'mongodb';
 dotenv.config('./.env')
 const url = process.env.MONGO_URL1;
-
-
 const client = new MongoClient(url);
 const database = 'granddragon'
- async function getData(){
+
+export const getData = async()=>{
+//  async function getData(){
    let result = await client.connect()
 
      let db = result.db(database)
@@ -25,9 +25,9 @@ const database = 'granddragon'
      global.food_items= response
      global.foodCatagory = response2
 }
-getData()
+// getData()
 
-module.exports =async()=>{
+export const connectDb =async()=>{
   const mongoUri= process.env.MONGO_URL2;
 
   
@@ -47,3 +47,4 @@ module.exports =async()=>{
           }
 
 
+// export  {connectDb,getData};
