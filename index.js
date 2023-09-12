@@ -6,13 +6,14 @@ const app = express()
 const port = 3100
 // const stripe = require("./Routes/Stripe")
 const Razorpay = require('razorpay')
-import path from "path";
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
+const path = require('path');
+const fileURLToPath = require('url');
+const { url } = require('inspector');
+const __filename = url.fileURLToPath(url.fileURLToPath);
 const __dirname = path.dirname(__filename)
-db()
 
 dotenv.config('./.env')
+db()
 app.use(cors({
   credentials : true,
   origin : 'http://localhost:3000'
