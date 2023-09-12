@@ -4,13 +4,13 @@ const db = require('./db')
 const dotenv = require('dotenv')
 const app = express()
 const port = 3100
-// const stripe = require("./Routes/Stripe")
+
 const Razorpay = require('razorpay')
 const path = require('path');
 const fileURLToPath = require('url');
 const { url } = require('inspector');
 const ___filename = url.fileURLToPath(url.fileURLToPath);
-const __dirname = path.dirname(___filename)
+const ___dirname = path.dirname(___filename)
 
 dotenv.config('./.env')
 db()
@@ -20,7 +20,7 @@ app.use(cors({
   // origin : 'http://www.thegranddragon.com'
 }))
 app.use(express.json())
-app.use(express.static(path.join(__dirname,'./client/build')))
+app.use(express.static(path.join(___dirname,'./client/build')))
 
 module.exports.instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
@@ -28,7 +28,7 @@ module.exports.instance = new Razorpay({
 });
 
 app.use('*',function(req,res){
-  res.sendFile(path.join(__dirname,'./client/build/index.html'))
+  res.sendFile(path.join(___dirname,'./client/build/index.html'))
 })
 
 // app.get('/',(req,res)=>{
