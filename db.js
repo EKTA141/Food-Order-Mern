@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import {MongoClient}  from 'mongodb';
 dotenv.config('./.env')
+mongoose.set('strictQuery', true);
 const url = process.env.MONGO_URL1;
 const client = new MongoClient(url);
 const database = 'granddragon'
