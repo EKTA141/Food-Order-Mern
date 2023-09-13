@@ -37,9 +37,9 @@ app.use('*',function(req,res){
 app.use('/api',CreateUser);
 app.use('/api',DisplayData);
 app.use('/api',Orderdata)
+const PORT = process.env.PORT || 8080;
 
-
-app.listen(port, () => {
-  console.log(`foodapp Backend listening on port ${port}`)
+app.listen(PORT, () => {
+  console.log(`foodapp Backend listening on ${PORT}`)
 })  
 
