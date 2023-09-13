@@ -18,7 +18,7 @@ connectDb()
 getData()
 const corsOptions = {
   // origin: 'http://localhost:3000',
-   origin : 'https://lazy-dove-shrug.cyclic.app',
+   origin : 'https://calm-jewelry-bee.cyclic.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
