@@ -17,7 +17,8 @@ const app = express()
 connectDb()
 getData()
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  // origin: 'http://localhost:3000',
+   origin : 'https://lazy-dove-shrug.cyclic.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
