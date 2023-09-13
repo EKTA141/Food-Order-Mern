@@ -27,13 +27,13 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname,'./client/build')))
 
 
-// app.use('*',function(req,res){
-//   res.sendFile(path.join(__dirname,'./client/build/index.html'))
-// })
-
-app.get('/',(req,res)=>{
-  res.send('helllo')
+app.use('*',function(req,res){
+  res.sendFile(path.join(__dirname,'./client/build/index.html'))
 })
+
+// app.get('/',(req,res)=>{
+//   res.send('helllo')
+// })
 app.use('/api',CreateUser);
 app.use('/api',DisplayData);
 app.use('/api',Orderdata)
