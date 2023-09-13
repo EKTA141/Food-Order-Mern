@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
-const port = 3900
+
 dotenv.config('./.env')
 const app = express()
 
@@ -37,8 +37,8 @@ app.use('*',function(req,res){
 app.use('/api',CreateUser);
 app.use('/api',DisplayData);
 app.use('/api',Orderdata)
-const PORT = process.env.PORT || 8080;
 
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`foodapp Backend listening on ${PORT}`)
 })  
