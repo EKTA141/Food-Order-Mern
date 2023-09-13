@@ -33,7 +33,7 @@ export const connectDb =async()=>{
 
   
       try {
-          const connect =  await mongoose.connect(mongoUri, {
+          await mongoose.connect(mongoUri, {
               useUnifiedTopology: true,
               useNewUrlParser : true
             }) ;
